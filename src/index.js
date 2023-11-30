@@ -1,20 +1,21 @@
 function refreshWeather(response) {
   let tempElement = document.querySelector("#weather-app-temperature");
   let temperature = response.data.temperature.current;
-
   let cityElement = document.querySelector("#weather-app-city");
-  cityElement.innerHTML = response.data.city;
-
   let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = response.data.condition.description;
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   let windElement = document.querySelector("#wind-speed");
+  let dateElement = document.querySelector("#weather-app-date");
+  let date = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#icon");
+
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class= "weather-app-icon"/>`;
+  cityElement.innerHTML = response.data.city;
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = ` ${Math.round(
     response.data.wind.speed / 1.609344
   )} mph`;
-  let dateElement = document.querySelector("#weather-app-date");
-  let date = new Date(response.data.time * 1000);
 
   dateElement.innerHTML = formateDate(date);
 

@@ -61,20 +61,20 @@ main {
   color: #113f67;
 }
 .weather-app-icon {
-  font-size: 44px;
-  margin-top: 22px;
-  margin-left: 10px;
+  width: 88px;
+  height: 88px;
 }
 .weather-app-temperature-container {
   display: flex;
 }
 .weather-app-temperature-value {
   font-size: 88px;
+  line-height: 88px;
   font-weight: bold;
   color: #113f67;
 }
 .weather-app-unit {
-  margin-top: 16px;
+  margin-top: 26px;
   font-size: 28px;
   color: #113f67;
 }
